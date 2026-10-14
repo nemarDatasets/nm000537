@@ -1,0 +1,10 @@
+{
+  "trial_type": {
+    "Levels": {
+      "electrical_stimulation": "single stimulation pulse at the epoch's time zero (located as the stimulus artefact in the release epochs)"
+    }
+  },
+  "epoch": {
+    "Description": "epoch index within the run (release trial order)"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "participant_id": {
+    "Description": "sub-<release patient number> (the 'PT' numbers used in the article)"
+  },
+  "age": {
+    "Description": "not in the release"
+  },
+  "sex": {
+    "Description": "not in the release"
+  },
+  "group": {
+    "Description": "neurosurgical patients with epilepsy (article)"
+  }
+}

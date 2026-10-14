@@ -1,0 +1,38 @@
+{
+  "Name": "Mapping effective connectivity of human amygdala with intracranial stimulation: es-TT evoked-potential epochs (OSF dngv5)",
+  "BIDSVersion": "1.10.0",
+  "DatasetType": "raw",
+  "License": "GPL-3.0",
+  "Authors": [
+    "Hiroyuki Oya",
+    "LeiQi"
+  ],
+  "HowToAcknowledge": "Cite the OSF project doi:10.17605/OSF.IO/DNGV5 (Hiroyuki Oya, LeiQi) and Sawada et al., Nat Commun 2022, doi:10.1038/s41467-022-32644-y.",
+  "ReferencesAndLinks": [
+    "https://osf.io/dngv5/",
+    "https://doi.org/10.1038/s41467-022-32644-y",
+    "https://doi.org/10.17605/OSF.IO/DNGV5"
+  ],
+  "SourceDatasets": [
+    {
+      "URL": "https://osf.io/dngv5/",
+      "DOI": "doi:10.17605/OSF.IO/DNGV5"
+    }
+  ],
+  "GeneratedBy": [
+    {
+      "Name": "cv6_conv_lit165.py",
+      "Description": "EPdata3D epochs written back to back (epoched iEEG, float32); sampling rate 8 kHz from the article + mains-harmonic check; stimulus artefact as time zero. Code in code/."
+    }
+  ],
+  "EthicsApprovals": [
+    "University of Iowa and California Institute of Technology Institutional Review Boards (article)"
+  ],
+  "Keywords": [
+    "iEEG",
+    "electrical stimulation",
+    "evoked potentials",
+    "amygdala",
+    "effective connectivity"
+  ]
+}
