@@ -1,9 +1,9 @@
 {
   "version": "2.0",
   "pipeline_stage": "validated",
-  "title": "Sawada-2022-mapping-10.1038/s41467-022-32644-y",
-  "description": "Intracranial EEG evoked-potential epochs recorded during single-pulse electrical stimulation of the amygdala (electrical stimulation tract-tracing, es-TT) in 11 neurosurgical patients across 46 stimulation runs. The data support mapping the effective connectivity of human amygdala subdivisions. Epochs are time-locked to the stimulus artefact and were converted to BIDS from a MATLAB-formatted OSF release.",
-  "methods_description": "Epoched iEEG (sampling rate 8 kHz per the original article) recorded with depth, strip and grid electrodes during single-pulse electrical stimulation of the amygdala; typically 60 epochs of 2 s per run, with the stimulus artefact as time zero.",
+  "title": "Mapping effective connectivity of human amygdala with intracranial stimulation - es-TT evoked potentials (Sawada-2022-mapping-10.1038/s41467-022-32644-y)",
+  "description": "Intracranial EEG evoked-potential epochs recorded during single-pulse electrical stimulation of the human amygdala (electrical stimulation tract-tracing, es-TT) in neurosurgical patients. The dataset includes 46 stimulation runs from 11 participants, sampled at 8 kHz, and supports mapping the effective connectivity of amygdala subdivisions. It was converted to BIDS from the OSF release accompanying Sawada et al., Nature Communications 2022.",
+  "methods_description": "Single-pulse electrical stimulation of the amygdala was delivered while evoked potentials were recorded with intracranial depth, strip and grid electrodes at 8 kHz. Epochs of about 2 s (16001 samples, typically 60 per run) are time-locked to the stimulus artefact. Channels with NaN samples are marked bad.",
   "license": "GPL-3.0",
   "dataset_type": "raw",
   "authors": {
@@ -75,5 +75,5 @@
     ".xlsx",
     ".yml"
   ],
-  "source_hash": "70cca72b23b8a7bf3c516a1d045be1b5923829e34d08841e5d750da9c14ceb64"
+  "source_hash": "0c822a239f4a9e34a941aed9b727fd50afdd07750946e1bb154ed58b7177eaa7"
 }
