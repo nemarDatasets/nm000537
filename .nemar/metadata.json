@@ -1,58 +1,17 @@
 {
   "version": "2.0",
   "pipeline_stage": "validated",
+  "title": "Sawada-2022-mapping-10.1038/s41467-022-32644-y",
+  "description": "Intracranial EEG evoked-potential epochs recorded during single-pulse electrical stimulation of the amygdala (electrical stimulation tract-tracing, es-TT) in 11 neurosurgical patients across 46 stimulation runs. The data support mapping the effective connectivity of human amygdala subdivisions. Epochs are time-locked to the stimulus artefact and were converted to BIDS from a MATLAB-formatted OSF release.",
+  "methods_description": "Epoched iEEG (sampling rate 8 kHz per the original article) recorded with depth, strip and grid electrodes during single-pulse electrical stimulation of the amygdala; typically 60 epochs of 2 s per run, with the stimulus artefact as time zero.",
+  "license": "GPL-3.0",
+  "dataset_type": "raw",
   "authors": {
     "Hiroyuki Oya": {
       "orcid": "0000-0002-1733-5478"
     },
     "LeiQi": {}
   },
-  "related_identifiers": [
-    {
-      "identifier": "10.17605/OSF.IO/DNGV5",
-      "identifier_type": "DOI",
-      "relation_type": "IsDerivedFrom"
-    },
-    {
-      "identifier": "10.1038/s41467-022-32644-y",
-      "identifier_type": "DOI",
-      "relation_type": "References"
-    },
-    {
-      "identifier": "https://github.com/nemarDatasets/nm000537",
-      "identifier_type": "URL",
-      "relation_type": "IsDescribedBy"
-    },
-    {
-      "identifier": "https://nemar.org/dataset/nm000537",
-      "identifier_type": "URL",
-      "relation_type": "IsDescribedBy"
-    }
-  ],
-  "title": "Mapping effective connectivity of human amygdala with intracranial stimulation: es-TT evoked-potential epochs (OSF dngv5)",
-  "license": "GPL-3.0",
-  "dataset_type": "raw",
-  "resource_type_general": "Dataset",
-  "modalities": [
-    "ieeg"
-  ],
-  "resource_type_specific": "iEEG Dataset",
-  "sizes": [
-    "34.88 GB (98 files)"
-  ],
-  "formats": [
-    ".eeg",
-    ".json",
-    ".mat",
-    ".ods",
-    ".py",
-    ".tsv",
-    ".vhdr",
-    ".vmrk",
-    ".xlsx"
-  ],
-  "description": "Intracranial EEG evoked-potential epochs recorded during single-pulse electrical stimulation of the human amygdala (electrical stimulation tract-tracing, es-TT) in neurosurgical patients. The dataset includes 11 participants and 46 stimulation runs of roughly 60 epochs each, sampled at 8 kHz. It supports mapping the effective connectivity of amygdala subdivisions, as reported in Sawada et al., Nature Communications 2022.",
-  "methods_description": "Single-pulse electrical stimulation of the amygdala with simultaneous intracranial recordings from depth, strip and grid electrodes at 8 kHz. Epochs are 2 s (16001 samples) and are time-locked to the stimulus artefact. Channel labels come from patient electrode spreadsheets.",
   "keywords": [
     {
       "term": "iEEG"
@@ -74,5 +33,47 @@
       "term": "effective connectivity"
     }
   ],
-  "source_hash": "2c3df04e3f8f324682dcdc7396bfa6982c8fc6ef1356765e1c2d474477cb578b"
+  "related_identifiers": [
+    {
+      "identifier": "10.17605/OSF.IO/DNGV5",
+      "identifier_type": "DOI",
+      "relation_type": "IsDerivedFrom"
+    },
+    {
+      "identifier": "10.1038/s41467-022-32644-y",
+      "identifier_type": "DOI",
+      "relation_type": "IsDescribedBy"
+    },
+    {
+      "identifier": "https://github.com/nemarDatasets/nm000537",
+      "identifier_type": "URL",
+      "relation_type": "IsDescribedBy"
+    },
+    {
+      "identifier": "https://nemar.org/dataset/nm000537",
+      "identifier_type": "URL",
+      "relation_type": "IsDescribedBy"
+    }
+  ],
+  "resource_type_general": "Dataset",
+  "resource_type_specific": "iEEG Dataset",
+  "modalities": [
+    "ieeg"
+  ],
+  "sizes": [
+    "34.88 GB (98 files)"
+  ],
+  "formats": [
+    ".eeg",
+    ".json",
+    ".mat",
+    ".ods",
+    ".py",
+    ".tsv",
+    ".vhdr",
+    ".vmrk",
+    ".xlsx",
+    ".yml"
+  ],
+  "source_hash": "70cca72b23b8a7bf3c516a1d045be1b5923829e34d08841e5d750da9c14ceb64"
 }
