@@ -1,10 +1,10 @@
 {
   "TaskName": "amygdalastim",
-  "SamplingFrequency": 8000.0,
+  "SamplingFrequency": 16000.0,
   "PowerLineFrequency": 60,
   "SoftwareFilters": "n/a",
-  "iEEGReference": "n/a (not stated in the release)",
-  "RecordingDuration": 120.00375,
+  "iEEGReference": "referential: reference contact(s) in the subgaleal space (article)",
+  "RecordingDuration": 60.001875,
   "RecordingType": "epoched",
   "Manufacturer": "Neuralynx (ATLAS, per the article)",
   "ECOGChannelCount": 0,
@@ -16,12 +16,19 @@
   "EMGChannelCount": 0,
   "MiscChannelCount": 0,
   "TriggerChannelCount": 0,
-  "EpochLength": 4.000125,
-  "TaskDescription": "Single-pulse bipolar electrical stimulation of the amygdala (article: 60 charge-balanced biphasic pulses, 0.2 ms per phase, 0.5 Hz, 9 mA) with concurrent iEEG; the stimulated contact pair is not identified in the release.",
+  "EpochLength": 2.0000625,
+  "TaskDescription": "Single-pulse bipolar electrical stimulation of the amygdala (article: 60 charge-balanced biphasic pulses, 0.2 ms per phase, 0.5 Hz, 9 mA) with concurrent iEEG; the stimulation channels of this run are in ElectricalStimulationParameters (deposit's experiment list).",
   "Instructions": "n/a",
   "InstitutionName": "n/a",
-  "HardwareFilters": "n/a",
+  "HardwareFilters": {
+    "HighpassFilter": {
+      "CutoffFrequency": 0.1
+    },
+    "LowpassFilter": {
+      "CutoffFrequency": 2000
+    }
+  },
   "ElectricalStimulation": true,
-  "ElectricalStimulationParameters": "article: biphasic square pulses 0.2 ms/phase, alternating polarity, 0.5 Hz with jitter, 9 mA, bipolar through adjacent amygdala contacts",
+  "ElectricalStimulationParameters": "article: biphasic square pulses 0.2 ms/phase, alternating polarity, 0.5 Hz with jitter, 9 mA, bipolar through adjacent amygdala contacts; this run (block 7 of 515_experiment_list.ods in sourcedata): stimulation channels 16 and 17, left amygdala, 9 mA, AM Systems model 2200 (channel numbers as in the acquisition system; the list notes that Neuralynx cables C and D were swapped up to block 53)",
   "iEEGPlacementScheme": "subdural strips/grids and depth electrodes (labels from the release spreadsheets)"
 }

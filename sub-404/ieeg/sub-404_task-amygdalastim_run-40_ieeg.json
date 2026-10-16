@@ -3,7 +3,7 @@
   "SamplingFrequency": 8000.0,
   "PowerLineFrequency": 60,
   "SoftwareFilters": "n/a",
-  "iEEGReference": "n/a (not stated in the release)",
+  "iEEGReference": "referential: reference contact(s) in the subgaleal space (article)",
   "RecordingDuration": 52.00325,
   "RecordingType": "epoched",
   "Manufacturer": "Neuralynx (ATLAS, per the article)",
