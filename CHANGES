@@ -1,9 +1,12 @@
 1.0.1 2026-10-16
-  - SamplingFrequency, EpochLength, RecordingDuration (ieeg.json), sampling_frequency (channels.tsv) and event onsets (events.tsv) corrected for sub-369 runs 91/92 (2000 Hz) and sub-400 / sub-515 (16000 Hz); were 8000 Hz. The .vhdr headers of these runs still say 8000 Hz until re-generated.
+  - SamplingFrequency, EpochLength, RecordingDuration (ieeg.json), sampling_frequency (channels.tsv) and event onsets (events.tsv) corrected for sub-369 runs 91/92 (2000 Hz) and sub-400 / sub-515 (16000 Hz; sub-400 reverted on 17 Oct, see below); were 8000 Hz. The .vhdr headers of these runs still say 8000 Hz until re-generated.
   - channels.tsv units uV (were n/a); iEEGReference subgaleal (article).
   - sub-515: HardwareFilters 0.1-2000 Hz and stimulation channels per run from 515_experiment_list.ods.
   - README: actual channel-typing rule (unlabelled and anatomical-label-only channels typed SEEG), epoch sizes and epoch counts per run.
   - dataset_description.json: Version 1.0.1.
+  - Correction (17 Oct 2026): sub-400 runs 72/73 reverted to 8000 Hz (SamplingFrequency, EpochLength, RecordingDuration,
+    sampling_frequency, event onsets). Unresolved: mains harmonics suggest 16 kHz, filter edge and artefact width suggest
+    8 kHz. sub-515 (16000 Hz) and sub-369 runs 91/92 (2000 Hz) unchanged.
 
 1.0.0 2026-10-14
   - Initial BIDS conversion uploaded to NEMAR.
