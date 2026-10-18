@@ -1,3 +1,6 @@
+1.0.2 2026-10-18
+  - Removed the citation-style author/year/DOI slug from dataset_description.json Name while retaining the scientific title.
+
 1.0.1 2026-10-16
   - SamplingFrequency, EpochLength, RecordingDuration (ieeg.json), sampling_frequency (channels.tsv) and event onsets (events.tsv) corrected for sub-369 runs 91/92 (2000 Hz) and sub-400 / sub-515 (16000 Hz; sub-400 reverted on 17 Oct, see below); were 8000 Hz. The .vhdr headers of these runs still say 8000 Hz until re-generated.
   - channels.tsv units uV (were n/a); iEEGReference subgaleal (article).
