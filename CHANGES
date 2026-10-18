@@ -1,3 +1,8 @@
+1.0.3 2026-10-19
+  - BrainVision headers: SamplingInterval of sub-369 runs 91/92 (500 us = 2000 Hz) and sub-515 runs 6/7/8/13/14 (62.5 us = 16000 Hz) now match _ieeg.json/channels.tsv/events.tsv (were 125 us = 8000 Hz).
+  - BrainVision headers: channel unit µV in all 46 runs (was n/a, read as volts); channels.tsv already said uV.
+  - Data (.eeg) and markers (.vmrk) unchanged; sub-400 not changed (rate unresolved) (fix-20261018).
+
 1.0.2 2026-10-18
   - Removed the citation-style author/year/DOI slug from dataset_description.json Name while retaining the scientific title.
 

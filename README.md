@@ -16,8 +16,8 @@ Evoked-potential epochs recorded with intracranial electrodes during single-puls
   `515_experiment_list.ods` states FS 16k, filters 0.1-2000 Hz. sub-400 (runs 72, 73) keeps the article's 8000 Hz, but its
   rate is unresolved: mains harmonics suggest 16 kHz, filter edge and artefact width suggest 8 kHz (checks of 17 Oct 2026).
   **Correction (1.0.1, 2026-10-16):** version 1.0.0 gave 8000 Hz for all runs. The BrainVision headers (`_ieeg.vhdr`) of the
-  7 corrected runs (sub-369 runs 91/92, sub-515) still say 8000 Hz (SamplingInterval 125 us) until they are re-generated:
-  use `SamplingFrequency` in `_ieeg.json`.
+  7 corrected runs (sub-369 runs 91/92, sub-515) were brought in line on 18 Oct 2026 (SamplingInterval 500 us and
+  62.5 us); header, `_ieeg.json`, channels.tsv and events.tsv now give the same rate.
 - Epochs: each run is the release's EP_data3D matrix (25-62 epochs per run: 60 in 37 runs, 30 in the 5 sub-515 runs) written back to back. Epoch length is
   4001 samples in the 3 sub-369 runs (2.0005 s at 2 kHz for runs 91/92, 0.500125 s at 8 kHz for run 100), 32001 samples
   (2.0000625 s at 16 kHz) in the 5 sub-515 runs and 16001 samples in the other 38 runs (2.000125 s at 8 kHz). The stimulus artefact (sample index per run in code/conversion_report.json, usually the centre) is
@@ -38,3 +38,7 @@ Evoked-potential epochs recorded with intracranial electrodes during single-puls
 
 ## Provenance
 Converted by the ieeg-nemar-20261005 campaign (convert_20261014, slice 6) with `code/cv6_conv_lit165.py`.
+
+## BrainVision headers corrected (18 Oct 2026)
+
+The `.vhdr` headers of sub-369 runs 91/92 (2000 Hz, SamplingInterval 500 us) and of the 5 sub-515 runs (16000 Hz, 62.5 us) said 8000 Hz; they now agree with `SamplingFrequency` in `_ieeg.json`, `sampling_frequency` in channels.tsv and the event onsets (onset = sample / rate). The channel unit field of all 46 headers was `n/a`, which MNE reads as volts (values 10^6 too large); it is now `µV`, as channels.tsv already said (see Units above). Sample values, `.eeg` and `.vmrk` files are unchanged. sub-400 runs 72/73 keep 8000 Hz (rate unresolved, see above).
