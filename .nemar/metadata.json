@@ -2,8 +2,8 @@
   "version": "2.0",
   "pipeline_stage": "validated",
   "title": "Mapping effective connectivity of human amygdala with intracranial stimulation - es-TT evoked potentials",
-  "description": "Intracranial EEG evoked-potential epochs recorded during single-pulse electrical stimulation of the human amygdala (electrical stimulation tract-tracing, es-TT) in neurosurgical patients. The dataset includes 11 participants and 46 stimulation runs of epoched depth, strip and grid electrode recordings, supporting mapping of effective connectivity of amygdala subdivisions. It is a BIDS conversion of the OSF release accompanying Sawada et al., Nature Communications 2022.",
-  "methods_description": "Epoched iEEG evoked potentials (typically 60 epochs per run) were recorded from depth, strip and grid electrodes during single-pulse electrical stimulation of the amygdala, with a subgaleal reference. Sampling rates were 8 kHz for most runs, 2 kHz for some and 16 kHz for others. The stimulus artefact defines the epoch time zero.",
+  "description": "Intracranial EEG evoked-potential epochs recorded during single-pulse electrical stimulation of the amygdala (electrical stimulation tract-tracing, es-TT) in 11 neurosurgical patients. The dataset comprises 46 stimulation runs of epoched recordings from depth, strip and grid electrodes. It supports mapping of effective connectivity of the human amygdala and accompanies Sawada et al., Nature Communications 2022.",
+  "methods_description": "Epoched iEEG evoked potentials (typically 60 epochs per run) were recorded with intracranial electrodes during single-pulse stimulation of the amygdala, with a subgaleal reference. Sampling rates were 8 kHz for most runs, 2 kHz and 16 kHz for some. The stimulus artefact defines epoch time zero. Data were converted from MATLAB EP_data3D matrices to BIDS.",
   "license": "GPL-3.0",
   "dataset_type": "raw",
   "authors": {
@@ -31,6 +31,9 @@
     },
     {
       "term": "effective connectivity"
+    },
+    {
+      "term": "stereo-EEG"
     }
   ],
   "related_identifiers": [
