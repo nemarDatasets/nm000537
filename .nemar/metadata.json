@@ -2,8 +2,8 @@
   "version": "2.0",
   "pipeline_stage": "validated",
   "title": "Mapping effective connectivity of human amygdala with intracranial stimulation - es-TT evoked potentials (Sawada-2022-mapping-10.1038/s41467-022-32644-y)",
-  "description": "Intracranial EEG evoked-potential epochs recorded during single-pulse electrical stimulation of the human amygdala (electrical stimulation tract-tracing, es-TT) in neurosurgical patients. The dataset includes 11 participants and 46 stimulation runs, converted from MATLAB matrices released on OSF by Hiroyuki Oya and Lei Qi. It supports mapping of effective connectivity of amygdala subdivisions as reported in Sawada et al., 2022. Note: BrainVision headers of 9 runs state 8000 Hz; the correct sampling rate is given in _ieeg.json.",
-  "methods_description": "Epoched iEEG (SEEG, ECoG contacts) was recorded in response to single-pulse amygdala stimulation, typically 60 epochs per run, with the stimulus artefact as time zero. Sampling rates were 2, 8 or 16 kHz, inferred from mains-harmonic checks, and the reference was a subgaleal contact. Data were converted from the release's EP_data3D matrices to BIDS with BrainVision format.",
+  "description": "Intracranial EEG evoked-potential epochs recorded during single-pulse electrical stimulation of the human amygdala (electrical stimulation tract-tracing, es-TT) in neurosurgical patients. The dataset includes 11 participants and 46 stimulation runs of epoched depth, strip and grid electrode recordings, supporting mapping of effective connectivity of amygdala subdivisions. It is a BIDS conversion of the OSF release accompanying Sawada et al., Nature Communications 2022.",
+  "methods_description": "Epoched iEEG evoked potentials (typically 60 epochs per run) were recorded from depth, strip and grid electrodes during single-pulse electrical stimulation of the amygdala, with a subgaleal reference. Sampling rates were 8 kHz for most runs, 2 kHz for some and 16 kHz for others. The stimulus artefact defines the epoch time zero.",
   "license": "GPL-3.0",
   "dataset_type": "raw",
   "authors": {
@@ -31,15 +31,6 @@
     },
     {
       "term": "effective connectivity"
-    },
-    {
-      "term": "SEEG"
-    },
-    {
-      "term": "ECoG"
-    },
-    {
-      "term": "single-pulse electrical stimulation"
     }
   ],
   "related_identifiers": [
@@ -76,6 +67,7 @@
     ".eeg",
     ".json",
     ".mat",
+    ".md",
     ".ods",
     ".py",
     ".tsv",
@@ -84,5 +76,5 @@
     ".xlsx",
     ".yml"
   ],
-  "source_hash": "5cc94e214053619c50321ec417a22eaa20cf45fbebb110307379e9e333af75f8"
+  "source_hash": "5cbaa88ab1817f1e16e57bde7347b685f1413b9d6d97d71468c8971ac194174a"
 }
