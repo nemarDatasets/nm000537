@@ -1,7 +1,7 @@
 {
   "version": "2.0",
   "pipeline_stage": "validated",
-  "title": "Mapping effective connectivity of human amygdala with intracranial stimulation - es-TT evoked potentials (Sawada-2022-mapping-10.1038/s41467-022-32644-y)",
+  "title": "Mapping effective connectivity of human amygdala with intracranial stimulation - es-TT evoked potentials",
   "description": "Intracranial EEG evoked-potential epochs recorded during single-pulse electrical stimulation of the human amygdala (electrical stimulation tract-tracing, es-TT) in neurosurgical patients. The dataset includes 11 participants and 46 stimulation runs of epoched depth, strip and grid electrode recordings, supporting mapping of effective connectivity of amygdala subdivisions. It is a BIDS conversion of the OSF release accompanying Sawada et al., Nature Communications 2022.",
   "methods_description": "Epoched iEEG evoked potentials (typically 60 epochs per run) were recorded from depth, strip and grid electrodes during single-pulse electrical stimulation of the amygdala, with a subgaleal reference. Sampling rates were 8 kHz for most runs, 2 kHz for some and 16 kHz for others. The stimulus artefact defines the epoch time zero.",
   "license": "GPL-3.0",
@@ -76,5 +76,5 @@
     ".xlsx",
     ".yml"
   ],
-  "source_hash": "5cbaa88ab1817f1e16e57bde7347b685f1413b9d6d97d71468c8971ac194174a"
+  "source_hash": "54383f99f60cc56acbfa4d3e0559cd3abb8bea5ce4251e2da5ffb23eed5bd21e"
 }
