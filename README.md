@@ -10,16 +10,17 @@ Evoked-potential epochs recorded with intracranial electrodes during single-puls
 ## Content
 - 11 participants (`sub-<PT number>`, the numbers used in the article), 46 stimulation runs (`run-<release
   run folder>`), each the release's EP_data3D matrix (typically 60 epochs) written back to back (`RecordingType` epoched).
-- Sampling rate: not stored in the release files. 8000 Hz (the article's rate) for 39 of the 46 runs, 2000 Hz for sub-369
-  runs 91 and 92 and 16000 Hz for sub-515 (all 5 runs). Basis: in the pre-stimulus baseline, the 60 Hz mains harmonics
-  (60/180/300/420 Hz) line up only under that rate (spectral check of 16 Oct 2026); for sub-515 the deposit's
-  `515_experiment_list.ods` states FS 16k, filters 0.1-2000 Hz. sub-400 (runs 72, 73) keeps the article's 8000 Hz, but its
-  rate is unresolved: mains harmonics suggest 16 kHz, filter edge and artefact width suggest 8 kHz (checks of 17 Oct 2026).
-  **Correction (1.0.1, 2026-10-16):** version 1.0.0 gave 8000 Hz for all runs. The BrainVision headers (`_ieeg.vhdr`) of the
-  7 corrected runs (sub-369 runs 91/92, sub-515) still say 8000 Hz (SamplingInterval 125 us) until they are re-generated:
-  use `SamplingFrequency` in `_ieeg.json`.
+- Sampling rate: not stored in the release files. 8000 Hz (the article's rate) for 38 of the 46 runs, 2000 Hz for the 3
+  sub-369 runs and 16000 Hz for sub-515 (all 5 runs). Basis: the authors' analysis code (github.com/hiroyukioya/Amygdala-Network,
+  `New_Waveform_Comparison_N150_Brain.m`) treats every epoch as -1..1 s and takes the rate from the epoch length
+  (`SR=(numel(EP_data(1,:))-2)/2`, then resamples to 8000 Hz), so epochs of 4001, 16001 and 32001 samples are 2, 8 and 16 kHz.
+  This agrees with the 60 Hz mains harmonics in the baseline of sub-369 runs 91/92 (spectral check of 16 Oct 2026) and with
+  FS 16k in the deposit's `515_experiment_list.ods`, and it sets sub-400 (16001 samples) at 8000 Hz.
+  **Correction (1.0.1, 2026-10-16; 1.0.3, 2026-10-21 for sub-369 run 100):** version 1.0.0 gave 8000 Hz for all runs. The
+  BrainVision headers (`_ieeg.vhdr`) of the 8 corrected runs (sub-369, sub-515) still say 8000 Hz (SamplingInterval 125 us)
+  until they are re-generated: use `SamplingFrequency` in `_ieeg.json`.
 - Epochs: each run is the release's EP_data3D matrix (25-62 epochs per run: 60 in 37 runs, 30 in the 5 sub-515 runs) written back to back. Epoch length is
-  4001 samples in the 3 sub-369 runs (2.0005 s at 2 kHz for runs 91/92, 0.500125 s at 8 kHz for run 100), 32001 samples
+  4001 samples in the 3 sub-369 runs (2.0005 s at 2 kHz), 32001 samples
   (2.0000625 s at 16 kHz) in the 5 sub-515 runs and 16001 samples in the other 38 runs (2.000125 s at 8 kHz). The stimulus artefact (sample index per run in code/conversion_report.json, usually the centre) is
   the epoch time zero and has an event in events.tsv. The stimulated amygdala contact pair is not identified in the release,
   except for sub-515 (stimulation channels per block in `515_experiment_list.ods`, copied into `ElectricalStimulationParameters`).
