@@ -1,3 +1,10 @@
+1.0.3 2026-10-22
+  - sub-400 runs 72/73: SamplingFrequency 16000 Hz (was 8000), EpochLength 1.0000625 s, RecordingDuration 60.00375 s
+    (ieeg.json), sampling_frequency (channels.tsv) and event onsets (events.tsv). The .vhdr headers still say 8000 Hz.
+  - README: sampling-rate basis measured on all 46 runs (code/receipts/2026-10-22_sampling-rates.md), epoch-end zero
+    padding, sub-369 run 100 not time-locked to the stimulation.
+  - dataset_description.json: Version 1.0.3.
+
 1.0.2 2026-10-18
   - Removed the citation-style author/year/DOI slug from dataset_description.json Name while retaining the scientific title.
 

@@ -10,19 +10,28 @@ Evoked-potential epochs recorded with intracranial electrodes during single-puls
 ## Content
 - 11 participants (`sub-<PT number>`, the numbers used in the article), 46 stimulation runs (`run-<release
   run folder>`), each the release's EP_data3D matrix (typically 60 epochs) written back to back (`RecordingType` epoched).
-- Sampling rate: not stored in the release files. 8000 Hz (the article's rate) for 39 of the 46 runs, 2000 Hz for sub-369
-  runs 91 and 92 and 16000 Hz for sub-515 (all 5 runs). Basis: in the pre-stimulus baseline, the 60 Hz mains harmonics
-  (60/180/300/420 Hz) line up only under that rate (spectral check of 16 Oct 2026); for sub-515 the deposit's
-  `515_experiment_list.ods` states FS 16k, filters 0.1-2000 Hz. sub-400 (runs 72, 73) keeps the article's 8000 Hz, but its
-  rate is unresolved: mains harmonics suggest 16 kHz, filter edge and artefact width suggest 8 kHz (checks of 17 Oct 2026).
-  **Correction (1.0.1, 2026-10-16):** version 1.0.0 gave 8000 Hz for all runs. The BrainVision headers (`_ieeg.vhdr`) of the
-  7 corrected runs (sub-369 runs 91/92, sub-515) still say 8000 Hz (SamplingInterval 125 us) until they are re-generated:
-  use `SamplingFrequency` in `_ieeg.json`.
+- Sampling rate: not stored in the release files. 8000 Hz (the article's rate) for 37 of the 46 runs (including sub-369
+  run 100), 2000 Hz for sub-369 runs 91/92, 16000 Hz for sub-400 (runs 72, 73) and sub-515 (all 5 runs). Basis (all 46
+  runs, `code/receipts/2026-10-22_sampling-rates.md`): the 60 Hz mains harmonics in the pre-stimulus baseline line up
+  only at that rate; fits give 1999.5-2000.0, 7996-8005 and 15998-16001 Hz. sub-515's `515_experiment_list.ods` states
+  FS 16k, filters 0.1-2000 Hz. In sub-400 the stimulus-artefact spectrum falls 14 dB from 0.16 to 0.24 cycle/sample, as
+  0.2 ms/phase pulses do at 16 kHz (sub-515: 24-37 dB); in the 8 kHz runs it falls by at most 3.1 dB or rises. The
+  background roll-off of sub-400 is at 0.26 cycle/sample, as in the 8 kHz runs with 16001-sample epochs (0.25-0.27), so
+  4.1 kHz at 16 kHz against 2.0-2.1 kHz in those runs. The authors' code (github.com/hiroyukioya/Amygdala-Network,
+  `SR=(numel(EP_data(1,:))-2)/2`) assumes -1..1 s epochs (rate = epoch length / 2 s), which gives 8000 for sub-400 and
+  2000 for sub-369 run 100.
+  **Corrections:** version 1.0.0 gave 8000 Hz for all runs; 1.0.1 corrected sub-369 runs 91/92 and sub-515, 1.0.3 sub-400.
+  The BrainVision headers (`_ieeg.vhdr`) of these 9 runs still say 8000 Hz (SamplingInterval 125 us) until they are
+  re-generated: use `SamplingFrequency` in `_ieeg.json`.
 - Epochs: each run is the release's EP_data3D matrix (25-62 epochs per run: 60 in 37 runs, 30 in the 5 sub-515 runs) written back to back. Epoch length is
   4001 samples in the 3 sub-369 runs (2.0005 s at 2 kHz for runs 91/92, 0.500125 s at 8 kHz for run 100), 32001 samples
-  (2.0000625 s at 16 kHz) in the 5 sub-515 runs and 16001 samples in the other 38 runs (2.000125 s at 8 kHz). The stimulus artefact (sample index per run in code/conversion_report.json, usually the centre) is
+  (2.0000625 s at 16 kHz) in the 5 sub-515 runs, and 16001 samples in sub-400 (1.0000625 s at 16 kHz) and in the other 36
+  runs (2.000125 s at 8 kHz). The last sample of every epoch is 0 (padding in the release). The stimulus artefact (sample index per run in code/conversion_report.json, usually the centre) is
   the epoch time zero and has an event in events.tsv. The stimulated amygdala contact pair is not identified in the release,
   except for sub-515 (stimulation channels per block in `515_experiment_list.ods`, copied into `ElectricalStimulationParameters`).
+- sub-369 run 100 is not time-locked to the stimulation: none of its 60 epochs has a stimulus artefact at the centre,
+  83 % of its trial x channel pairs are NaN in the release (0.4-26 % in the other runs), and every 4th epoch from the 9th
+  keeps 2-5 channels. Its events.tsv onsets (epoch centres) do not mark pulses; leave it out of evoked-response analyses.
 - Channels: only the release's channel slots that contain data, named `ch<slot>`; the contact label from the patient's
   spreadsheet (PT<n>.xlsx / Eleclocation.xlsx) is in the channel description. Typing rule actually applied: labels
   containing "depth" are SEEG, labels containing "strip" or "grid" are ECOG, and every other channel is also typed SEEG
