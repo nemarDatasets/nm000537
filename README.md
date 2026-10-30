@@ -38,3 +38,12 @@ Evoked-potential epochs recorded with intracranial electrodes during single-puls
 
 ## Provenance
 Converted by the ieeg-nemar-20261005 campaign (convert_20261014, slice 6) with `code/cv6_conv_lit165.py`.
+
+## BrainVision headers of the 7 runs with corrected rates (fix-20261030, Oct 2026)
+
+Version 1.0.1 corrected `SamplingFrequency` of sub-369 runs 91/92 (2000 Hz) and of the 5 sub-515 runs (6, 7, 8, 13, 14;
+16000 Hz) in `_ieeg.json`, channels.tsv and events.tsv, but their `.vhdr` headers kept `SamplingInterval=125.0`
+(8000 Hz). The 7 headers now say 500.0 us and 62.5 us, so readers that take the rate from the header (MNE,
+MNE-BIDS) agree with the sidecars and the event onsets. Only that line (plus one comment line) changed; the channel
+unit fields are left as released, `.eeg` and `.vmrk` are unchanged. Script: `code/fix-20261030_vhdr_rates.py`.
+The two sub-400 runs (72, 73) are handled in the separate pull request on the sub-400 sampling rate.
