@@ -1,3 +1,7 @@
+1.0.3 2026-10-30
+
+  - Correct the sampling interval in seven BrainVision headers
+
 1.0.2 2026-10-18
   - Removed the citation-style author/year/DOI slug from dataset_description.json Name while retaining the scientific title.
 
