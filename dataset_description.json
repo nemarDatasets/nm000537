@@ -2,7 +2,7 @@
   "Name": "Mapping effective connectivity of human amygdala with intracranial stimulation - es-TT evoked potentials",
   "BIDSVersion": "1.10.0",
   "DatasetType": "raw",
-  "Version": "1.0.2",
+  "Version": "1.0.3",
   "License": "GPL-3.0",
   "Authors": [
     "Hiroyuki Oya",

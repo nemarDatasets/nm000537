@@ -36,5 +36,27 @@ Evoked-potential epochs recorded with intracranial electrodes during single-puls
   and the few EPdata2.mat files whose layout ([254 x 16002]) is undocumented; MAT text-header dates set to day 01.
 - Not included: es-fMRI folders (the fMRI data are on OpenNeuro ds002799) and the Granger-causality source data.
 
+## Corrections (version 1.0.3)
+These notes correct the Content section above.
+- Sampling rate: 8000 Hz for 37 of the 46 runs (including sub-369 run 100), 2000 Hz for sub-369 runs 91/92, and
+  16000 Hz for sub-400 (runs 72, 73; not 8000 Hz) and sub-515 (all 5 runs). Basis (all 46 runs,
+  `code/receipts/2026-10-22_sampling-rates.md`): the 60 Hz mains harmonics in the pre-stimulus baseline line up only at
+  that rate; fits give 1999.5-2000.0, 7996-8005 and 15998-16001 Hz. sub-515's `515_experiment_list.ods` states FS 16k,
+  filters 0.1-2000 Hz. In sub-400 the stimulus-artefact spectrum falls 14 dB from 0.16 to 0.24 cycle/sample, as
+  0.2 ms/phase pulses do at 16 kHz (sub-515: 24-37 dB); in the 8 kHz runs it falls by at most 3.1 dB or rises. The
+  background roll-off of sub-400 is at 0.26 cycle/sample, as in the 8 kHz runs with 16001-sample epochs (0.25-0.27), so
+  4.1 kHz at 16 kHz against 2.0-2.1 kHz in those runs. The authors' code (github.com/hiroyukioya/Amygdala-Network,
+  `SR=(numel(EP_data(1,:))-2)/2`) assumes -1..1 s epochs (rate = epoch length / 2 s), which gives 8000 for sub-400 and
+  2000 for sub-369 run 100. Version 1.0.0 gave 8000 Hz for all runs; 1.0.1 corrected sub-369 runs 91/92 and sub-515,
+  1.0.3 sub-400.
+- BrainVision headers: those of the 9 runs not at 8000 Hz give the rates above (SamplingInterval 500 us for sub-369 runs
+  91/92, 62.5 us for sub-400 and sub-515). They are plain text files in git since 1.0.3 (the annexed ones said 8000 Hz);
+  the `.eeg` files and the other 37 headers are unchanged (`code/receipts/2026-10-30_vhdr-plain-git.md`).
+- Epochs: the 16001-sample epochs of sub-400 last 1.0000625 s at 16 kHz, so the 2.000125 s epochs (16001 samples at
+  8 kHz) are in 36 runs, not 38. The last sample of every epoch is 0 (padding in the release).
+- sub-369 run 100 is not time-locked to the stimulation: none of its 60 epochs has a stimulus artefact at the centre,
+  83 % of its trial x channel pairs are NaN in the release (0.4-26 % in the other runs), and every 4th epoch from the 9th
+  keeps 2-5 channels. Its events.tsv onsets (epoch centres) do not mark pulses; leave it out of evoked-response analyses.
+
 ## Provenance
 Converted by the ieeg-nemar-20261005 campaign (convert_20261014, slice 6) with `code/cv6_conv_lit165.py`.

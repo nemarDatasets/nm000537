@@ -1,3 +1,14 @@
+1.0.3 2026-10-22
+  - sub-400 runs 72/73: SamplingFrequency 16000 Hz (was 8000), EpochLength 1.0000625 s, RecordingDuration 60.00375 s
+    (ieeg.json), sampling_frequency (channels.tsv) and event onsets (events.tsv).
+  - .vhdr headers of the 9 runs not at 8000 Hz (sub-369 runs 91/92, sub-400 runs 72/73, sub-515): SamplingInterval 500
+    or 62.5 us as in ieeg.json and channels.tsv (were 125 us); committed as plain git text files (were annexed); .eeg
+    files unchanged.
+  - README: new section 'Corrections (version 1.0.3)': sampling rates and their basis measured on all 46 runs
+    (code/receipts/2026-10-22_sampling-rates.md), headers, epoch-end zero padding, sub-369 run 100 not time-locked to
+    the stimulation; the Content section is kept as published.
+  - dataset_description.json: Version 1.0.3.
+
 1.0.2 2026-10-18
   - Removed the citation-style author/year/DOI slug from dataset_description.json Name while retaining the scientific title.
 
