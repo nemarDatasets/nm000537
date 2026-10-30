@@ -1,6 +1,7 @@
 1.0.3 2026-10-22
   - sub-400 runs 72/73: SamplingFrequency 16000 Hz (was 8000), EpochLength 1.0000625 s, RecordingDuration 60.00375 s
-    (ieeg.json), sampling_frequency (channels.tsv) and event onsets (events.tsv). The .vhdr headers still say 8000 Hz.
+    (ieeg.json), sampling_frequency (channels.tsv), event onsets (events.tsv) and the .vhdr headers (SamplingInterval
+    62.5 us; committed as plain git text files, were annexed; .eeg files unchanged).
   - README: sampling-rate basis measured on all 46 runs (code/receipts/2026-10-22_sampling-rates.md), epoch-end zero
     padding, sub-369 run 100 not time-locked to the stimulation.
   - dataset_description.json: Version 1.0.3.

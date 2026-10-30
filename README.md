@@ -21,7 +21,8 @@ Evoked-potential epochs recorded with intracranial electrodes during single-puls
   `SR=(numel(EP_data(1,:))-2)/2`) assumes -1..1 s epochs (rate = epoch length / 2 s), which gives 8000 for sub-400 and
   2000 for sub-369 run 100.
   **Corrections:** version 1.0.0 gave 8000 Hz for all runs; 1.0.1 corrected sub-369 runs 91/92 and sub-515, 1.0.3 sub-400.
-  The BrainVision headers (`_ieeg.vhdr`) of these 9 runs still say 8000 Hz (SamplingInterval 125 us) until they are
+  The BrainVision headers (`_ieeg.vhdr`) of sub-400 say 16000 Hz (SamplingInterval 62.5 us; plain text files in git
+  since 1.0.3). Those of the other 7 corrected runs still say 8000 Hz (SamplingInterval 125 us) until they are
   re-generated: use `SamplingFrequency` in `_ieeg.json`.
 - Epochs: each run is the release's EP_data3D matrix (25-62 epochs per run: 60 in 37 runs, 30 in the 5 sub-515 runs) written back to back. Epoch length is
   4001 samples in the 3 sub-369 runs (2.0005 s at 2 kHz for runs 91/92, 0.500125 s at 8 kHz for run 100), 32001 samples
