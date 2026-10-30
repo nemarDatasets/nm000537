@@ -12,7 +12,7 @@
   `43ea23a8dee54c6878bff876f07ddfc878064d7d` (this PR's data commit; unchanged at the PR head).
 - The annexed `.vhdr` of the 9 runs whose rate differs from 8000 Hz (sub-369 runs 91/92, sub-400, sub-515), fetched from
   `nemar-s3` (sha256 equal to their annex keys; checked by hand, not by the script), all say `SamplingInterval=125.0`
-  (8000 Hz). The PR replaces the two sub-400 headers with plain-git headers at 16000 Hz (`2026-10-30_vhdr-plain-git.md`).
+  (8000 Hz). The PR replaces these 9 headers with plain-git headers at the measured rates (`2026-10-30_vhdr-plain-git.md`).
 
 ## Method
 - Script: `2026-10-22_sampling-rates.py <release_root> <nm000537_checkout>` (numpy 2.5.4, scipy 1.18.1, pandas 3.1.0),
